@@ -7,22 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #app {
-            
-            background-color: rgba(0, 255, 255, 0.452);
-            height: 600px;
-            width: 600px;
-        }
+
     </style>
 </head>
 
 <body>
     <div id="app">
-        <button id="botao">Botão</button>
+        <button onclick="mudar()">mudar</button>
+        <button onclick="start()">iniciar</button>
     </div>
     <script>
-        console.log(document.querySelectorAll('#app'));
-        
+        var app = document.querySelector('#app');
+        var cor = true;
+        var ini = false;
+        function start() {
+            ini = true;
+            app.style.width = "600px";
+            app.style.height = "600px";
+            app.style.backgroundColor = "rgba(0, 255, 255, 0.452)";
+            //app.setAttribute("style", "background-color:rgba(0, 255, 255, 0.452);");
+
+        }
+        function mudar() {
+            if (ini) {
+                if (cor) {
+                    app.style.width = "600px";
+                    app.style.height = "600px";
+                    app.style.backgroundColor = "black";
+                    cor = false;
+                } else {
+                    app.style.width = "600px";
+                    app.style.height = "600px";
+                    app.style.backgroundColor = "rgba(0, 255, 255, 0.452)";
+                    cor = true;
+                }
+            }
+        }
+
     </script>
 </body>
 
